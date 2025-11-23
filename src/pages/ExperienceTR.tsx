@@ -56,7 +56,8 @@ Bunun yanında farklı markalar için n8n tabanlı otomasyonlar kuruyor; sipari�
             <p className={`leading-relaxed transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Ürünleri fikirden canlı versiyona taşıyorum. Tasarımı, mantığı, prototiplemeyi, iterasyonu ve dağıtımı kendim hallediyorum. İş akışım basit: hızlı inşa et, hemen test et, sürekli iyileştir, tekrar yayınla.
+              Dört yılı aşkın süredir fikirleri çalışan ürünlere dönüştürüyorum. Tasarımı, mantığı, prototiplemeyi, iterasyonu ve dağıtımı kendim yönetiyorum.
+İş akışım basit: hızlı inşa et, hemen test et, sürekli iyileştir, tekrar yayınla.
             </p>
           </div>
           <div className={`backdrop-blur-md border rounded-3xl p-8 shadow-2xl hover:transition-all transition-all duration-300 animate-slide-in stagger-4 ${
