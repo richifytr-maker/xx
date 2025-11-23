@@ -40,8 +40,7 @@ function AboutTR() {
               <p className={`mb-4 leading-relaxed transition-colors duration-300 animate-slide-in stagger-4 ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                Kendi projelerimin yanı sıra farklı markalarla da çalışıyorum.
-Kendi mağazalarım için ürün akışları, ödeme süreçleri ve customer journey otomasyonları kuruyorum; başka e-ticaret mağazaları için ise sipariş yönetimi, müşteri iletişimi, veri işleme ve operasyon hızlandırma odaklı n8n tabanlı sistemler geliştiriyorum.
+                Kendi projelerim var ama aynı sırada farklı markalarla da çalışıyorum. Kendi mağazalarım için ürün akışları, ödeme süreçleri ve müşteri yolculuğu otomasyonları kuruyorum; başka e-ticaret mağazaları içinse sipariş yönetimi, müşteri iletişimi, veri işleme ve operasyon hızlandırma odaklı n8n tabanlı sistemler geliştiriyorum.
               </p>
 
               <p className={`leading-relaxed transition-colors duration-300 animate-slide-in stagger-5 ${
