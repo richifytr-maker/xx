@@ -12,7 +12,7 @@ function Home() {
         <p className={`text-sm sm:text-base mb-4 transition-colors duration-300 ${
           isDark ? 'text-gray-200' : 'text-gray-700'
         }`}>
-          17 y.o. startup founder & AI automation builder
+          17 y.o. solo entrepreneur & AI automation builder
         </p>
       </div>
     </section>
