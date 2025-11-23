@@ -377,7 +377,7 @@ function AppContent() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/tr" element={<HomeTR />} />
-            <Route path="/tr/hakkimda" element={<AboutTR />} />
+            <Route path="/tr/ben kimim" element={<AboutTR />} />
             <Route path="/tr/deneyim" element={<ExperienceTR />} />
             <Route path="/tr/iletisim" element={<ContactTR />} />
           </Routes>
