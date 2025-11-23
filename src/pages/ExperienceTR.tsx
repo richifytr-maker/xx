@@ -40,7 +40,8 @@ Platform, kullanıcıların yeteneklerini birbirleriyle takas etmelerine olanak 
             <p className={`leading-relaxed transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              E-ticaret markaları için n8n tabanlı otomasyon sistemleri geliştiriyorum. Bunlar sipariş akışı otomasyonu, müşteri iletişim iş akışları, veri işleme hatları ve backend operasyon araçlarını içeriyor. Her proje aynı hedefe odaklanıyor: manuel iş yükünü azaltmak ve günlük operasyonları hızlandırmak.
+              Kendi e-ticaret markalarım için ürün akışları, müşteri yolculuğu otomasyonları ve operasyon hızlandırma sistemleri geliştiriyorum.
+Bunun yanında farklı markalar için n8n tabanlı otomasyonlar kuruyor; sipariş akışı, müşteri iletişimi, veri işleme hatları ve backend operasyon araçları oluşturuyorum.
             </p>
           </div>
           <div className={`backdrop-blur-md border rounded-3xl p-8 shadow-2xl hover:transition-all transition-all duration-300 animate-slide-in stagger-3 ${
