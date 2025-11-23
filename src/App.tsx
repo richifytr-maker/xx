@@ -327,7 +327,7 @@ function AppContent() {
               : 'bg-white/15 border-gray-300/50 hover:bg-white/35 hover:border-gray-300/70'
           }`}
         >
-          <div className={`flex items-center gap-2 pr-4 sm:pr-8 mr-4 sm:mr-8 ${isDark ? 'border-r border-white/20' : 'border-r border-gray-300/50'}`}>
+          <div className="flex items-center gap-2 pr-4 sm:pr-8 mr-4 sm:mr-8">
             <img
               src={profileImg}
               alt="Mehmet Resit Gul"
