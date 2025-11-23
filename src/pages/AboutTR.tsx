@@ -34,13 +34,14 @@ function AboutTR() {
               <p className={`mb-4 leading-relaxed transition-colors duration-300 animate-slide-in stagger-3 ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                Türkiye'nin ilk ve tek yetenek değişim platformunu kurdum. İstanbul'da yaşıyorum ve şu anda 11. sınıf öğrencisiyim. Üç yıldır kesintisiz stajlarla sektör deneyimi kazanıyorum. Bunun yanında ürünler geliştiriyor, n8n tabanlı otomasyon sistemleri kuruyorum ve e-ticaret markalarının satışlarını artırmalarına, operasyonel yüklerini azaltmalarına ve günlük süreçlerini otomatikleştirmelerine yardımcı olan iş akışları tasarlıyorum.
+                Türkiye'nin ilk ve tek yetenek değişim platformunu kurdum. İstanbul'da yaşıyorum ve şu anda 11. sınıf öğrencisiyim. Üç yıldır kesintisiz olarak stajlarla sektör deneyimi kazanıyorum. Bunun yanında ürünler geliştiriyor, n8n tabanlı otomasyon sistemleri kuruyorum ve e-ticaret markalarının satışlarını artırmalarına, operasyonel yüklerini azaltmalarına ve günlük süreçlerini otomatikleştirmelerine yardımcı olan iş akışları tasarlıyorum.
               </p>
 
               <p className={`mb-4 leading-relaxed transition-colors duration-300 animate-slide-in stagger-4 ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                Çalışmalarım yapay zeka, no-code prototipleme ve bilişsel sinirbilimin kesişiminde yer alıyor. Kendi projelerim ve birlikte çalıştığım markalar için sipariş akışını, müşteri iletişimini, veri işlemeyi ve backend operasyonlarını hızlandıran küçük ama güçlü mikro sistemler inşa ediyorum.
+                Kendi projelerimin yanı sıra farklı markalarla da çalışıyorum.
+Kendi mağazalarım için ürün akışları, ödeme süreçleri ve customer journey otomasyonları kuruyorum; başka e-ticaret mağazaları için ise sipariş yönetimi, müşteri iletişimi, veri işleme ve operasyon hızlandırma odaklı n8n tabanlı sistemler geliştiriyorum.
               </p>
 
               <p className={`leading-relaxed transition-colors duration-300 animate-slide-in stagger-5 ${
