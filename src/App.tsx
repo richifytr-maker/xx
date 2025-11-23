@@ -6,6 +6,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
+import HomeTR from './pages/HomeTR';
+import AboutTR from './pages/AboutTR';
+import ExperienceTR from './pages/ExperienceTR';
+import ContactTR from './pages/ContactTR';
 import profileImg from './mehmetresitgul.com.png';
 
 function AppContent() {
@@ -244,6 +248,10 @@ function AppContent() {
     about: '/about',
     experience: '/experience',
     contact: '/contact',
+    homeTR: '/tr',
+    aboutTR: '/tr/hakkimda',
+    experienceTR: '/tr/deneyim',
+    contactTR: '/tr/iletisim',
   };
 
   const currentPath = location.pathname;
@@ -359,6 +367,10 @@ function AppContent() {
             <Route path="/about" element={<About />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/tr" element={<HomeTR />} />
+            <Route path="/tr/hakkimda" element={<AboutTR />} />
+            <Route path="/tr/deneyim" element={<ExperienceTR />} />
+            <Route path="/tr/iletisim" element={<ContactTR />} />
           </Routes>
         </div>
       </ThemeProvider>
