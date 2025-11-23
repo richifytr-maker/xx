@@ -72,8 +72,10 @@ Bunun yanında farklı markalar için n8n tabanlı otomasyonlar kuruyor; sipari�
             <p className={`leading-relaxed transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Yapay zekanın insan karar verme hızını ve bilişsel iş akışlarını nasıl etkilediğini inceliyorum. Son çalışmalarım, AI destekli görevlerin zihinsel yükümüzü, dikkat desenlerimizi ve sürecin bir kısmı otomatikleştirildiğinde beynin problem çözmeyi nasıl ele aldığını değiştirdiğine odaklanıyor.
-              Erken aşama araştırmalar yayınlıyor, deneysel fikirleri araştırıyor ve AI sistemleri tarafından desteklendiğinde insan muhakemesinin nasıl adapte olduğunu analiz ediyorum. Şu anki ilgi alanım, AI destekli karar vermenin prefrontal işleme hızı üzerindeki etkisi.
+              Yapay zekânın insan karar verme hızını ve bilişsel iş akışlarını nasıl etkilediğini araştırıyorum. Çalışmalarım; AI destekli görevlerin zihinsel yükümüzü, dikkat düzenimizi ve problem çözme süreçlerimizi nasıl değiştirdiğine odaklanıyor.
+Erken aşama araştırmalar yürütüyor, deneysel fikirler geliştiriyor ve insan muhakemesinin AI sistemleri tarafından desteklendiğinde nasıl adapte olduğunu analiz ediyorum.
+
+Şu anki temel ilgi alanım: AI destekli karar vermenin prefrontal işlem hızı üzerindeki etkisi.
             </p>
           </div>
         </div>
