@@ -249,7 +249,7 @@ function AppContent() {
     experience: '/experience',
     contact: '/contact',
     homeTR: '/tr',
-    aboutTR: '/tr/hakkimda',
+    aboutTR: '/tr/ben kimim',
     experienceTR: '/tr/deneyim',
     contactTR: '/tr/iletisim',
   };
