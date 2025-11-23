@@ -10,7 +10,7 @@ function AboutTR() {
         <h2 className={`text-5xl font-bold mb-12 transition-colors duration-300 ${
           isDark ? 'text-white' : 'text-gray-900'
         }`}>
-          ben kimim?<span className="text-cyan-400">_</span>
+          ben kimim<span className="text-cyan-400">_</span>
         </h2>
 
         <div className={`backdrop-blur-md border rounded-3xl p-8 mb-12 shadow-2xl ${
