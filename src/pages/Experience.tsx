@@ -64,7 +64,7 @@ function Experience() {
           }`}>
             <h3 className={`text-2xl font-bold mb-2 transition-colors duration-300 ${
               isDark ? 'text-white' : 'text-gray-900'
-            }`}>Neuroscience Research</h3>
+            }`}>Neuroscience</h3>
             <p className="text-cyan-400 mb-4">Independent Researcher</p>
             <p className={`leading-relaxed transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-700'
