@@ -24,7 +24,8 @@ function ExperienceTR() {
             <p className={`leading-relaxed transition-colors duration-300 ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Türkiye'nin ilk yetenek değişim platformunu sıfırdan tasarlayıp inşa ettim. Fon yok, ekip yok. Ürünü, mantığı ve lansmانı kendim hallettim. Platform, kullanıcıların yeteneklerini herhangi bir gerçek kaynağı değiş tokuş eder gibi takas etmelerine olanak sağlıyor.
+              Türkiye’nin ilk yetenek değişim platformunu sıfırdan tasarlayıp geliştirdim. Fon yok, ekip yok. Ürünü, mantığını ve lansmanı tamamen kendim yönettim.
+Platform, kullanıcıların yeteneklerini birbirleriyle takas etmelerine olanak sağlıyor.
             </p>
           </div>
           <div className={`backdrop-blur-md border rounded-3xl p-8 shadow-2xl hover:transition-all transition-all duration-300 animate-slide-in stagger-2 ${
