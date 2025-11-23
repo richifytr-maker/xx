@@ -12,7 +12,7 @@ function HomeTR() {
         <p className={`text-sm sm:text-base mb-4 transition-colors duration-300 ${
           isDark ? 'text-gray-200' : 'text-gray-700'
         }`}>
-          17 yaşında startup kurucusu & AI otomasyon geliştiricisi
+          17 yaşında solo girişimci & startup kurucusu
         </p>
       </div>
     </section>
