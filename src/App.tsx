@@ -305,41 +305,50 @@ function AppContent() {
           </div>
           <div className="flex items-center gap-10">
             <button
-              onClick={() => navigateTo('about')}
+              onClick={() => {
+                const isTR = location.pathname.startsWith('/tr');
+                navigateTo(isTR ? 'aboutTR' : 'about');
+              }}
               className={`text-sm font-normal transition-colors relative ${
-                activeSection === 'about'
+                activeSection === 'about' || activeSection === 'aboutTR'
                   ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
                   : (isDark ? 'hover:text-gray-300' : 'hover:text-gray-600')
               }`}
             >
-              <span className="relative z-10">about me</span>
-              {activeSection === 'about' && (
+              <span className="relative z-10">{location.pathname.startsWith('/tr') ? 'ben kimim?' : 'about me'}</span>
+              {(activeSection === 'about' || activeSection === 'aboutTR') && (
                 <span className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full"></span>
               )}
             </button>
             <button
-              onClick={() => navigateTo('experience')}
+              onClick={() => {
+                const isTR = location.pathname.startsWith('/tr');
+                navigateTo(isTR ? 'experienceTR' : 'experience');
+              }}
               className={`text-sm font-normal transition-colors relative ${
-                activeSection === 'experience'
+                activeSection === 'experience' || activeSection === 'experienceTR'
                   ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
                   : (isDark ? 'hover:text-gray-300' : 'hover:text-gray-600')
               }`}
             >
-              <span className="relative z-10">experience</span>
-              {activeSection === 'experience' && (
+              <span className="relative z-10">{location.pathname.startsWith('/tr') ? 'deneyimler' : 'experience'}</span>
+              {(activeSection === 'experience' || activeSection === 'experienceTR') && (
                 <span className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full"></span>
               )}
             </button>
             <button
-              onClick={() => navigateTo('contact')}
+              onClick={() => {
+                const isTR = location.pathname.startsWith('/tr');
+                navigateTo(isTR ? 'contactTR' : 'contact');
+              }}
               className={`text-sm font-normal transition-colors relative ${
-                activeSection === 'contact'
+                activeSection === 'contact' || activeSection === 'contactTR'
                   ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
                   : (isDark ? 'hover:text-gray-300' : 'hover:text-gray-600')
               }`}
             >
-              <span className="relative z-10">contact</span>
-              {activeSection === 'contact' && (
+              <span className="relative z-10">{location.pathname.startsWith('/tr') ? 'iletişim' : 'contact'}</span>
+              {(activeSection === 'contact' || activeSection === 'contactTR') && (
                 <span className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full"></span>
               )}
             </button>
