@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { ThemeProvider } from './ThemeContext';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -12,6 +12,46 @@ import ExperienceTR from './pages/ExperienceTR';
 import ContactTR from './pages/ContactTR';
 import profileImg from './mehmetresitgul.com.png';
 
+interface NavButtonProps {
+  onClick: () => void;
+  isActive: boolean;
+  isDark: boolean;
+  label: string;
+}
+
+function NavButton({ onClick, isActive, isDark, label }: NavButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      className={`text-sm font-normal transition-colors relative ${
+        isActive
+          ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
+          : (isDark ? 'hover:text-gray-300' : 'hover:text-gray-600')
+      }`}
+    >
+      <span className="relative z-10">{label}</span>
+      {isActive && (
+        <span className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full"></span>
+      )}
+    </button>
+  );
+}
+
+function MobileNavButton({ onClick, isActive, isDark, label }: NavButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      className={`w-full text-left px-4 py-2 rounded-lg transition-colors text-sm font-normal ${
+        isActive
+          ? (isDark ? 'bg-cyan-400/20 text-cyan-400' : 'bg-cyan-600/20 text-cyan-600')
+          : (isDark ? 'text-gray-300 hover:bg-white/10' : 'text-gray-700 hover:bg-gray-800/10')
+      }`}
+    >
+      {label}
+    </button>
+  );
+}
+
 function AppContent() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mousePos = useRef({ x: 0, y: 0 });
@@ -21,6 +61,7 @@ function AppContent() {
     const saved = localStorage.getItem('theme');
     return saved === null ? true : saved === 'dark';
   });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
@@ -278,9 +319,9 @@ function AppContent() {
         className="fixed inset-0 pointer-events-none z-0"
       />
 
-      <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-auto mx-auto px-4">
+      <nav className="fixed top-4 sm:top-8 left-1/2 -translate-x-1/2 z-50 w-auto mx-auto px-3 sm:px-4">
         <div
-          className={`backdrop-blur-xl border rounded-full px-12 py-3 shadow-[inset_0_0_2px_1px_rgba(255,255,255,0.35),inset_0_0_10px_4px_rgba(255,255,255,0.15),0_4px_16px_rgba(17,17,26,0.05),0_8px_24px_rgba(17,17,26,0.05),0_16px_56px_rgba(17,17,26,0.05)] transition-all duration-300 flex items-center justify-between min-w-[800px] ${
+          className={`backdrop-blur-xl border rounded-full px-4 sm:px-12 py-3 shadow-[inset_0_0_2px_1px_rgba(255,255,255,0.35),inset_0_0_10px_4px_rgba(255,255,255,0.15),0_4px_16px_rgba(17,17,26,0.05),0_8px_24px_rgba(17,17,26,0.05),0_16px_56px_rgba(17,17,26,0.05)] transition-all duration-300 flex items-center justify-between ${
             isDark
               ? 'bg-black/15 border-white/20 hover:bg-black/35 hover:border-white/30'
               : 'bg-white/15 border-gray-300/50 hover:bg-white/35 hover:border-gray-300/70'
@@ -290,71 +331,62 @@ function AppContent() {
             <img
               src={profileImg}
               alt="Mehmet Resit Gul"
-              className={`w-10 h-10 rounded-full border object-cover ${
+              className={`w-8 sm:w-10 h-8 sm:h-10 rounded-full border object-cover ${
                 isDark ? 'border-white/20' : 'border-gray-300/50'
               }`}
             />
             <button
               onClick={() => navigateTo('home')}
-              className={`text-xl font-medium transition-colors ${
+              className={`text-lg sm:text-xl font-medium transition-colors ${
                 isDark ? 'hover:text-cyan-400' : 'hover:text-cyan-600'
               }`}
             >
               Mehmet
             </button>
           </div>
-          <div className="flex items-center gap-10">
-            <button
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`sm:hidden ml-4 p-2 rounded-full transition-all duration-300 ${
+              isDark
+                ? 'bg-white/10 hover:bg-white/20 text-white'
+                : 'bg-gray-800/10 hover:bg-gray-800/20 text-gray-900'
+            }`}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
+          <div className="hidden sm:flex items-center gap-6 sm:gap-10">
+            <NavButton
               onClick={() => {
                 const isTR = location.pathname.startsWith('/tr');
                 navigateTo(isTR ? 'aboutTR' : 'about');
               }}
-              className={`text-sm font-normal transition-colors relative ${
-                activeSection === 'about' || activeSection === 'aboutTR'
-                  ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
-                  : (isDark ? 'hover:text-gray-300' : 'hover:text-gray-600')
-              }`}
-            >
-              <span className="relative z-10">{location.pathname.startsWith('/tr') ? 'ben kimim?' : 'about me'}</span>
-              {(activeSection === 'about' || activeSection === 'aboutTR') && (
-                <span className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full"></span>
-              )}
-            </button>
-            <button
+              isActive={activeSection === 'about' || activeSection === 'aboutTR'}
+              isDark={isDark}
+              label={location.pathname.startsWith('/tr') ? 'ben kimim?' : 'about me'}
+            />
+            <NavButton
               onClick={() => {
                 const isTR = location.pathname.startsWith('/tr');
                 navigateTo(isTR ? 'experienceTR' : 'experience');
               }}
-              className={`text-sm font-normal transition-colors relative ${
-                activeSection === 'experience' || activeSection === 'experienceTR'
-                  ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
-                  : (isDark ? 'hover:text-gray-300' : 'hover:text-gray-600')
-              }`}
-            >
-              <span className="relative z-10">{location.pathname.startsWith('/tr') ? 'deneyimler' : 'experience'}</span>
-              {(activeSection === 'experience' || activeSection === 'experienceTR') && (
-                <span className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full"></span>
-              )}
-            </button>
-            <button
+              isActive={activeSection === 'experience' || activeSection === 'experienceTR'}
+              isDark={isDark}
+              label={location.pathname.startsWith('/tr') ? 'deneyimler' : 'experience'}
+            />
+            <NavButton
               onClick={() => {
                 const isTR = location.pathname.startsWith('/tr');
                 navigateTo(isTR ? 'contactTR' : 'contact');
               }}
-              className={`text-sm font-normal transition-colors relative ${
-                activeSection === 'contact' || activeSection === 'contactTR'
-                  ? (isDark ? 'text-cyan-400' : 'text-cyan-600')
-                  : (isDark ? 'hover:text-gray-300' : 'hover:text-gray-600')
-              }`}
-            >
-              <span className="relative z-10">{location.pathname.startsWith('/tr') ? 'iletişim' : 'contact'}</span>
-              {(activeSection === 'contact' || activeSection === 'contactTR') && (
-                <span className="absolute inset-0 bg-cyan-400/10 blur-xl rounded-full"></span>
-              )}
-            </button>
+              isActive={activeSection === 'contact' || activeSection === 'contactTR'}
+              isDark={isDark}
+              label={location.pathname.startsWith('/tr') ? 'iletişim' : 'contact'}
+            />
             <button
               onClick={toggleTheme}
-              className={`ml-6 p-2 rounded-full transition-all duration-300 hover:scale-110 ${
+              className={`ml-4 sm:ml-6 p-2 rounded-full transition-all duration-300 hover:scale-110 ${
                 isDark
                   ? 'bg-white/10 hover:bg-white/20 text-yellow-400'
                   : 'bg-gray-800/10 hover:bg-gray-800/20 text-gray-700'
@@ -367,6 +399,60 @@ function AppContent() {
             </button>
           </div>
         </div>
+
+        {mobileMenuOpen && (
+          <div className={`sm:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 backdrop-blur-xl border rounded-2xl shadow-2xl w-48 ${
+            isDark
+              ? 'bg-black/50 border-white/20'
+              : 'bg-white/50 border-gray-300/50'
+          }`}>
+            <div className="flex flex-col gap-0 p-4">
+              <MobileNavButton
+                onClick={() => {
+                  const isTR = location.pathname.startsWith('/tr');
+                  navigateTo(isTR ? 'aboutTR' : 'about');
+                  setMobileMenuOpen(false);
+                }}
+                isActive={activeSection === 'about' || activeSection === 'aboutTR'}
+                isDark={isDark}
+                label={location.pathname.startsWith('/tr') ? 'ben kimim?' : 'about me'}
+              />
+              <MobileNavButton
+                onClick={() => {
+                  const isTR = location.pathname.startsWith('/tr');
+                  navigateTo(isTR ? 'experienceTR' : 'experience');
+                  setMobileMenuOpen(false);
+                }}
+                isActive={activeSection === 'experience' || activeSection === 'experienceTR'}
+                isDark={isDark}
+                label={location.pathname.startsWith('/tr') ? 'deneyimler' : 'experience'}
+              />
+              <MobileNavButton
+                onClick={() => {
+                  const isTR = location.pathname.startsWith('/tr');
+                  navigateTo(isTR ? 'contactTR' : 'contact');
+                  setMobileMenuOpen(false);
+                }}
+                isActive={activeSection === 'contact' || activeSection === 'contactTR'}
+                isDark={isDark}
+                label={location.pathname.startsWith('/tr') ? 'iletişim' : 'contact'}
+              />
+              <button
+                onClick={() => {
+                  toggleTheme();
+                  setMobileMenuOpen(false);
+                }}
+                className={`mt-2 p-2 rounded-full transition-all duration-300 flex items-center justify-center ${
+                  isDark
+                    ? 'bg-white/10 hover:bg-white/20 text-yellow-400'
+                    : 'bg-gray-800/10 hover:bg-gray-800/20 text-gray-700'
+                }`}
+              >
+                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
       
       <ThemeProvider isDark={isDark}>
